@@ -10,6 +10,7 @@ import redux from '/images/redux.png';
 import sass from '/images/sass.png';
 import laravel from '/images/laravel.png';
 import php from '/images/php.png';
+import github from '/images/github.png';
 
 export const SkillsContent = [
   {
@@ -71,5 +72,10 @@ export const SkillsContent = [
     id: 12,
     image: php,
     name: 'PHP',
+  },
+  {
+    id: 13,
+    image: github,
+    name: 'Github',
   },
 ];
