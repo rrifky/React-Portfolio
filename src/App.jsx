@@ -7,7 +7,7 @@ import ContactSection from './components/Fragments/ContactSection';
 
 export default function App() {
   return (
-    <div className="mx-10 md:mx-32 lg:mx-48 xl:mx-60 mb-8">
+    <div className="mx-auto max-w-[340px] mb-8 md:max-w-[720px] lg:max-w-[960px]">
       <Profile />
       <ExperienceSection />
       <ProjectSection />

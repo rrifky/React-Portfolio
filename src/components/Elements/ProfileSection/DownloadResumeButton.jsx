@@ -24,8 +24,8 @@ const DownloadResumeButton = () => {
   };
 
   return (
-    <div className="flex px-2 justify-end">
-      <button className="flex flex-row text-xl text-slate-600 font-medium ml-5">
+    <div className="">
+      <button className="flex flex-row text-base md:text-xl text-slate-600 font-medium ml-5">
         <div className="flex flex-col items-center">
           <motion.div animate={arrowIsUp ? 'up' : 'down'} variants={iconVariants} className="flex justify-center text-slate-600">
             <FaArrowDown />

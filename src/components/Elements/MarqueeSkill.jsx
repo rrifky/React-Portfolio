@@ -19,7 +19,7 @@ const MarqueeSkill = () => {
                 <div>
                   <img src={skill.image} alt={skill.name} width={30} height={30} />
                 </div>
-                <div className="ml-4 text-xl">{skill.name}</div>
+                <div className="ml-4 text-lg md:text-xl">{skill.name}</div>
               </div>
             </div>
           ))}
@@ -33,7 +33,7 @@ const MarqueeSkill = () => {
                 <div>
                   <img src={skill.image} alt={skill.name} width={30} height={30} />
                 </div>
-                <div className="ml-4 text-xl">{skill.name}</div>
+                <div className="ml-4 text-lg md:text-xl">{skill.name}</div>
               </div>
             </div>
           ))}

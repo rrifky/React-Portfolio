@@ -48,7 +48,7 @@ const ProjectCardItem = ({ project }) => {
   return (
     <div className="max-w-md rounded-md overflow-hidden border border-gray-200 transform transition duration-500 ease-in-out hover:scale-95 hover:shadow-md cursor-pointer mb-10">
       <div className="relative">
-        <img className="w-full object-cover h-56" src={project.image} alt="Project Image" />
+        <img className="w-full object-cover h-36 md:h-56" src={project.image} alt="Project Image" />
       </div>
       <div className="p-4">
         <ProjectCardHeader title={project.title} />
