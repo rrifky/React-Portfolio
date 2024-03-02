@@ -28,7 +28,7 @@ const Sidenav = () => {
   };
 
   return (
-    <div className={`w-[${isExpanded ? '200px' : '70px'}] h-screen fixed left-0 top-0 rounded-tr-2xl rounded-br-2xl transition-all duration-500 ease-in-out`} style={{ boxShadow: '3px 0px 10px rgba(0, 0, 0, 0.1)' }}>
+    <div className={`${isExpanded ? 'w-[200px]' : 'w-[70px]'} h-screen fixed left-0 top-0 rounded-tr-2xl rounded-br-2xl transition-all duration-500 ease-in-out`} style={{ boxShadow: '3px 0px 10px rgba(0, 0, 0, 0.1)' }}>
       <div className="flex flex-col justify-between h-full px-2">
         <div className="flex flex-col border-b border-slate-300">
           <div className="flex justify-center mt-4 mb-8">
