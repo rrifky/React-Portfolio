@@ -8,13 +8,15 @@ import Sidenav from './components/Layouts/Sidenav';
 
 export default function App() {
   return (
-    <div className="mx-auto xl:ml-[245px] max-w-[340px] mb-8 md:max-w-[720px] lg:max-w-[960px]">
+    <div className="mx-auto max-w-[340px] mb-8 md:max-w-[720px] lg:max-w-[920px]">
       <Sidenav />
+      <div className='ml-8'>
       <Profile />
       <ExperienceSection />
       <ProjectSection />
       <SkillSection />
       <ContactSection />
+      </div>
     </div>
   );
 }
