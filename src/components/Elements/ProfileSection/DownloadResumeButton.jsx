@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 
 const DownloadResumeButton = () => {
   const [arrowIsUp, setArrowIsUp] = useState(true);
+  const isMobile = window.innerWidth < 768;
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -32,7 +33,7 @@ const DownloadResumeButton = () => {
           </motion.div>
           <div className="w-5 border-b-4 border-slate-600 flex justify-center"></div>
         </div>
-        <div className="ml-3">Download Resume</div>
+        <div>{isMobile ? <div className="ml-3">Resume</div> : <div className="ml-3">Download Resume</div>}</div>
       </button>
     </div>
   );
