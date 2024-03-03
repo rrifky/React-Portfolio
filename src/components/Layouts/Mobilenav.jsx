@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { BsMoonStarsFill } from 'react-icons/bs';
 import { IoSunny } from 'react-icons/io5';
+import { motion } from 'framer-motion';
 
 const Mobilenav = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -32,7 +33,7 @@ const Mobilenav = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 h-[60px]  bg-white
+      className={`fixed top-0 left-0 right-0 z-50 h-[60px] bg-white transition-all duration-500
     ${isScrolled ? 'backdrop-blur-lg shadow-md bg-transparent' : ''} 
     `}
     >
@@ -57,13 +58,29 @@ const Mobilenav = () => {
           <div className={`h-[3px] w-[25px]  bg-slate-800 mt-1 transition-all duration-200 ${isOpen ? 'translate-x-[5px] opacity-0' : ''}`}></div>
           <div className={`h-[3px] w-[25px] bg-slate-800 mt-1 transition duration-300 ${isOpen ? '-rotate-45 -translate-y-[7px]' : ''}`}></div>
         </div>
-        {/* <div className={`absolute top-16 left-0 right-0 bg-white ${isOpen ? 'block' : 'hidden'}`}>
-          <ul>
-            <li>Menu Item 1</li>
-            <li>Menu Item 2</li>
-            <li>Menu Item 3</li>
-          </ul>
-        </div> */}
+        <div className={`absolute top-0 left-0 right-0  bg-white shadow-md h-96 -z-50 ${isOpen ? 'block' : 'hidden'}`}>
+          <motion.div 
+          initial={isOpen ? { opacity: 0, y: -50 } : { opacity: 1, y: 0 }} 
+          animate={isOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }} 
+          transition={{ duration: 0.3 }} 
+          className="flex flex-col items-center h-full">
+            <div className="flex items-center h-full mt-20">
+              <a href="#">Home</a>
+            </div>
+            <div className="flex items-center h-full">
+              <a href="#">About</a>
+            </div>
+            <div className="flex items-center h-full">
+              <a href="#">Experience</a>
+            </div>
+            <div className="flex items-center h-full">
+              <a href="#">Project</a>
+            </div>
+            <div className="flex items-center h-full mb-8">
+              <a href="#">Contact</a>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </nav>
   );
