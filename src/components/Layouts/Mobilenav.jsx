@@ -33,8 +33,8 @@ const Mobilenav = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 h-[60px] bg-white transition-all duration-500
-    ${isScrolled ? 'backdrop-blur-lg shadow-md bg-transparent' : ''} 
+      className={`fixed top-0 left-0 right-0 z-50 h-[60px] transition-all duration-500
+    ${isScrolled ? 'backdrop-blur-lg shadow-md bg-transparent' : ' bg-white'} 
     `}
     >
       <div className={`flex justify-between items-center h-full px-5`}>
