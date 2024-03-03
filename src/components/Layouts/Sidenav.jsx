@@ -54,6 +54,7 @@ const Sidenav = () => {
             </span>
           </div>
           <div>
+            {/* Darkmode Toggle */}
             {isExpanded ? (
               <div className={`flex justify-center mb-6 min-w-[170px]`}>
                 <div className={`relative min-w-[60px] h-[30px] ${isDarkMode ? 'bg-blue-950 border-blue-950' : 'bg-yellow-300 border-yellow-300'}  border-2  rounded-2xl`}>
@@ -72,6 +73,7 @@ const Sidenav = () => {
                 {isSun ? <IoPartlySunnyOutline size={20} /> : <BsCloudMoon size={20} />}
               </div>
             )}
+            {/* End Darkmode Toggle */}
           </div>
         </div>
         <div className="flex flex-col text-slate-700">
