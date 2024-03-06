@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import Profile from './components/Fragments/ProfileSection';
-import ExperienceSection from './components/Fragments/ExperienceSection';
-import ProjectSection from './components/Fragments/ProjectSection';
-import SkillSection from './components/Fragments/SkillSection';
-import ContactSection from './components/Fragments/ContactSection';
-import Sidenav from './components/Layouts/Sidenav';
-import Mobilenav from './components/Layouts/Mobilenav';
+import Profile from '../components/Fragments/ProfileSection';
+import ExperienceSection from '../components/Fragments/ExperienceSection';
+import ProjectSection from '../components/Fragments/ProjectSection';
+import ContactSection from '../components/Fragments/ContactSection';
+import Sidenav from '../components/Layouts/Sidenav';
+import Mobilenav from '../components/Layouts/Mobilenav';
+import SkillSection from '../components/Fragments/SkillSection';
 
-export default function App() {
+const HomePages = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -33,4 +33,6 @@ export default function App() {
       </div>
     </div>
   );
-}
+};
+
+export default HomePages;

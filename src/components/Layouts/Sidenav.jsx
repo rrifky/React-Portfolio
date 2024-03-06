@@ -11,6 +11,7 @@ import { IoIosArrowForward } from 'react-icons/io';
 import { motion } from 'framer-motion';
 import { IoSunny } from 'react-icons/io5';
 import { BsMoonStarsFill } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 const Sidenav = () => {
   const [isSun, setIsSun] = useState(true);
@@ -77,7 +78,7 @@ const Sidenav = () => {
           </div>
         </div>
         <div className="flex flex-col text-slate-700">
-          <span className={`flex ${isExpanded ? 'justify-start ml-[16.5px]' : 'justify-center'} my-6`}>
+          <Link to={'/'} className={`flex ${isExpanded ? 'justify-start ml-[16.5px]' : 'justify-center'} my-6`}>
             {isExpanded ? (
               <div className="flex items-center">
                 <RiHome6Line className="text-xl" />
@@ -86,10 +87,12 @@ const Sidenav = () => {
                 </motion.span>
               </div>
             ) : (
-              <RiHome6Line className="text-xl" />
+              <Link to={'/'}>
+                <RiHome6Line className="text-xl" />
+              </Link>
             )}
-          </span>
-          <span className={`flex ${isExpanded ? 'justify-start ml-[17px]' : 'justify-center'} my-6`}>
+          </Link>
+          <Link to={'/about'} className={`flex ${isExpanded ? 'justify-start ml-[17px]' : 'justify-center'} my-6`}>
             {isExpanded ? (
               <div className="flex items-center">
                 <FiUser className="text-xl" />
@@ -98,10 +101,12 @@ const Sidenav = () => {
                 </motion.span>
               </div>
             ) : (
-              <FiUser className="text-xl" />
+              <Link to={'/about'}>
+                <FiUser className="text-xl" />
+              </Link>
             )}
-          </span>
-          <span className={`flex ${isExpanded ? 'justify-start ml-[17px]' : 'justify-center'} my-6`}>
+          </Link>
+          <Link to={'/experience'} className={`flex ${isExpanded ? 'justify-start ml-[17px]' : 'justify-center'} my-6`}>
             {isExpanded ? (
               <div className="flex items-center">
                 <BsSuitcaseLg className="text-xl" />
@@ -110,10 +115,12 @@ const Sidenav = () => {
                 </motion.span>
               </div>
             ) : (
-              <BsSuitcaseLg className="text-xl" />
+              <Link to={'/experience'}>
+                <BsSuitcaseLg className="text-xl" />
+              </Link>
             )}
-          </span>
-          <span className={`flex ${isExpanded ? 'justify-start ml-[17px]' : 'justify-center'} my-6`}>
+          </Link>
+          <Link to={'/project'} className={`flex ${isExpanded ? 'justify-start ml-[17px]' : 'justify-center'} my-6`}>
             {isExpanded ? (
               <div className="flex items-center">
                 <GoProject className="text-xl" />
@@ -122,10 +129,12 @@ const Sidenav = () => {
                 </motion.span>
               </div>
             ) : (
-              <GoProject className="text-xl" />
+              <Link to={'/project'}>
+                <GoProject className="text-xl" />
+              </Link>
             )}
-          </span>
-          <span className={`flex ${isExpanded ? 'justify-start ml-[17px]' : 'justify-center'} my-6`}>
+          </Link>
+          <Link to={'/contact'} className={`flex ${isExpanded ? 'justify-start ml-[17px]' : 'justify-center'} my-6`}>
             {isExpanded ? (
               <div className="flex items-center">
                 <FaRegAddressCard className="text-xl" />
@@ -134,9 +143,11 @@ const Sidenav = () => {
                 </motion.span>
               </div>
             ) : (
-              <FaRegAddressCard className="text-xl" />
+              <Link to={'/contact'}>
+                <FaRegAddressCard className="text-xl" />
+              </Link>
             )}
-          </span>
+          </Link>
         </div>
         <div className="flex justify-center mb-5 text-pink-600">
           <span>

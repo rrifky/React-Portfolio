@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { BsMoonStarsFill } from 'react-icons/bs';
 import { IoSunny } from 'react-icons/io5';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Mobilenav = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -38,7 +39,9 @@ const Mobilenav = () => {
     `}
     >
       <div className={`flex justify-between items-center h-full px-5`}>
-        <div className="text-2xl font-bold text-slate-800">RA</div>
+        <Link to="/" className="text-2xl font-bold text-slate-800">
+          RA
+        </Link>
         {/* Darkmode toggle */}
         <div className={`flex justify-center mb-6 min-w-[170px]`}>
           <div className={`relative top-[12px] min-w-[60px] h-[30px] ${isDarkMode ? 'bg-blue-950 border-blue-950' : 'bg-yellow-300 border-yellow-300'}  border-2  rounded-2xl`}>
@@ -59,25 +62,21 @@ const Mobilenav = () => {
           <div className={`h-[3px] w-[25px] bg-slate-800 mt-1 transition duration-300 ${isOpen ? '-rotate-45 -translate-y-[7px]' : ''}`}></div>
         </div>
         <div className={`absolute top-0 left-0 right-0  bg-white shadow-md h-96 -z-50 ${isOpen ? 'block' : 'hidden'}`}>
-          <motion.div 
-          initial={isOpen ? { opacity: 0, y: -50 } : { opacity: 1, y: 0 }} 
-          animate={isOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }} 
-          transition={{ duration: 0.3 }} 
-          className="flex flex-col items-center h-full">
+          <motion.div initial={isOpen ? { opacity: 0, y: -50 } : { opacity: 1, y: 0 }} animate={isOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }} transition={{ duration: 0.3 }} className="flex flex-col items-center h-full">
             <div className="flex items-center h-full mt-20">
-              <a href="#">Home</a>
+              <Link to="/">Home</Link>
             </div>
             <div className="flex items-center h-full">
-              <a href="#">About</a>
+              <Link to="/about">About</Link>
             </div>
             <div className="flex items-center h-full">
-              <a href="#">Experience</a>
+              <Link to="/experience">Experience</Link>
             </div>
             <div className="flex items-center h-full">
-              <a href="#">Project</a>
+              <Link to="/project">Project</Link>
             </div>
             <div className="flex items-center h-full mb-8">
-              <a href="#">Contact</a>
+              <Link to="/contact">Contact</Link>
             </div>
           </motion.div>
         </div>

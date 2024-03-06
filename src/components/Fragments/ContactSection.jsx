@@ -6,7 +6,6 @@ const ContactSection = () => {
     name: '',
     email: '',
     message: '',
-    focus: false,
   });
 
   const handleSubmit = (event) => {
