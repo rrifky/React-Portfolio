@@ -22,14 +22,16 @@ const HomePages = () => {
   }, []);
 
   return (
-    <div className="mx-auto max-w-[340px] mb-8 md:max-w-[720px] lg:max-w-[920px]">
-      {isMobile ? <Mobilenav /> : <Sidenav />}
-      <div className="xl:ml-8 mt-[80px] xl:mt-0">
-        <Profile />
-        <ExperienceSection />
-        <ProjectSection />
-        <SkillSection />
-        <ContactSection />
+    <div className="flex justify-center">
+      <div className="mx-auto max-w-[340px] mb-8 md:max-w-[720px] lg:max-w-[920px]">
+        {isMobile ? <Mobilenav /> : <Sidenav />}
+        <div className="xl:ml-8 mt-[80px] xl:mt-0">
+          <Profile />
+          <ExperienceSection />
+          <ProjectSection />
+          <SkillSection />
+          <ContactSection />
+        </div>
       </div>
     </div>
   );
