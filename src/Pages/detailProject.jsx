@@ -11,6 +11,7 @@ const DetailProject = () => {
 
   return (
     <div>
+      <h1>{project.id}</h1>
       <h2>{project.title}</h2>
       <p>{project.desc}</p>
       <img src={project.image} alt={project.title} />
