@@ -7,6 +7,7 @@ import './index.css';
 import ExperiencePages from './Pages/experiencePages';
 import ProjectPages from './Pages/projectPages';
 import ContactPages from './Pages/contactPages';
+import DetailProject from './Pages/detailProject';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: '/project',
     element: <ProjectPages />,
+  },
+  {
+    path: '/detailproject/:id',
+    element: <DetailProject />,
   },
   {
     path: '/contact',

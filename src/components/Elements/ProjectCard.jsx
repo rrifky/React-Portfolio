@@ -3,6 +3,7 @@ import { FreeMode } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import { ProjectContent } from '../../data/projectContent';
+import { Link } from 'react-router-dom';
 
 const ProjectCard = () => {
   return (
@@ -46,7 +47,7 @@ const ProjectCard = () => {
 
 const ProjectCardItem = ({ project }) => {
   return (
-    <div className="max-w-md rounded-md overflow-hidden border border-gray-200 transform transition duration-500 ease-in-out hover:scale-95 hover:shadow-md cursor-pointer mb-10">
+    <Link to={`/detailproject/${project.id}`} target="_blank" className="max-w-md rounded-md overflow-hidden border border-gray-200 transform transition duration-500 ease-in-out hover:scale-95 hover:shadow-md cursor-pointer mb-10">
       <div className="relative">
         <img className="w-full object-cover h-36 md:h-56" src={project.image} alt="Project Image" />
       </div>
@@ -54,7 +55,7 @@ const ProjectCardItem = ({ project }) => {
         <ProjectCardHeader title={project.title} />
         <ProjectCardBody desc={project.desc} />
       </div>
-    </div>
+    </Link>
   );
 };
 
