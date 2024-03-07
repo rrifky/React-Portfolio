@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { ExperienceContent } from '../../data/experienceContent';
 import ExperienceCard from '../Elements/ExperienceCard';
 import TitleSection from '../Elements/TitleSection';
+import { Link } from 'react-router-dom';
 
 const ExperienceSection = () => {
   const [experiences, setExperiences] = useState([]);
@@ -15,10 +16,12 @@ const ExperienceSection = () => {
       <TitleSection title="Experience" subtitle="My experience" />
       {experiences.length > 0 &&
         experiences.map((experience) => (
-          <ExperienceCard key={experience.id}>
-            <ExperienceCard.ExperienceHeader image={experience.image} />
-            <ExperienceCard.ExperienceBody title={experience.title} subtitle={experience.subtitle} date={experience.date} />
-          </ExperienceCard>
+          <Link key={experience.id} to={`/detailexperience/${experience.id}`} target="_blank">
+            <ExperienceCard>
+              <ExperienceCard.ExperienceHeader image={experience.image} />
+              <ExperienceCard.ExperienceBody title={experience.title} subtitle={experience.subtitle} date={experience.date} />
+            </ExperienceCard>
+          </Link>
         ))}
     </div>
   );

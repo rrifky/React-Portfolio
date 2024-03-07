@@ -8,6 +8,7 @@ import ExperiencePages from './Pages/experiencePages';
 import ProjectPages from './Pages/projectPages';
 import ContactPages from './Pages/contactPages';
 import DetailProject from './Pages/detailProject';
+import DetailExperience from './Pages/detailExperience';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: '/experience',
     element: <ExperiencePages />,
+  },
+  {
+    path: '/detailexperience/:id',
+    element: <DetailExperience />,
   },
   {
     path: '/project',
