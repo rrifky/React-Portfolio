@@ -6,7 +6,7 @@ const DetailProject = () => {
   const project = ProjectContent.find((project) => project.id === parseInt(id));
 
   if (!project) {
-    return <div>Proyek tidak ditemukan.</div>;
+    return <div>Proyek tidak ditemukan!</div>;
   }
 
   return (
