@@ -3,8 +3,10 @@ import { ExperienceContent } from '../../data/experienceContent';
 import ExperienceCard from '../Elements/ExperienceCard';
 import TitleSection from '../Elements/TitleSection';
 import { Link } from 'react-router-dom';
+import { useTheme } from '../../context/ThemeContext';
 
 const ExperienceSection = () => {
+  const { isDarkMode } = useTheme();
   const [experiences, setExperiences] = useState([]);
 
   useEffect(() => {

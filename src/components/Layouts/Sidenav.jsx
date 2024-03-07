@@ -22,11 +22,11 @@ const Sidenav = () => {
     collapsed: { opacity: 0, x: 60 },
   };
 
-  const boxShadowColor = isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)';
+  const boxShadowColor = isDarkMode ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.1)';
 
   return (
     <div
-      className={`${isExpanded ? 'w-[200px]' : 'w-[70px]'} h-screen fixed left-0 top-0 rounded-tr-2xl rounded-br-2xl transition-all duration-300 ease-in-out  ${isDarkMode && 'bg-slate-800 text-slate-50'} `}
+      className={`${isExpanded ? 'w-[200px]' : 'w-[70px]'} h-screen fixed left-0 top-0 rounded-tr-2xl rounded-br-2xl transition-all duration-300 ease-in-out   ${isDarkMode ? 'bg-zinc-900 text-slate-50' : 'bg-white'} `}
       style={{ boxShadow: `3px 0px 10px ${boxShadowColor}` }}
     >
       <div className="flex flex-col justify-between h-full px-2">

@@ -1,9 +1,11 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/free-mode';
 import { ProjectContent } from '../../data/projectContent';
 import { Link } from 'react-router-dom';
+
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import { useTheme } from '../../context/ThemeContext';
 
 const ProjectCard = () => {
   return (
@@ -46,25 +48,33 @@ const ProjectCard = () => {
 };
 
 const ProjectCardItem = ({ project }) => {
+  const { isDarkMode } = useTheme();
+
   return (
-    <Link to={`/detailproject/${project.id}`} target="_blank" className="max-w-md rounded-md overflow-hidden border border-gray-200 transform transition duration-500 ease-in-out hover:scale-95 hover:shadow-md cursor-pointer mb-10">
-      <div className="relative">
-        <img className="w-full object-cover h-36 md:h-56" src={project.image} alt="Project Image" />
-      </div>
-      <div className="p-4">
-        <ProjectCardHeader title={project.title} />
-        <ProjectCardBody desc={project.desc} />
-      </div>
-    </Link>
+    <div className={`max-w-md rounded-md overflow-hidden transform transition shadow duration-500 ease-in-out hover:scale-95  cursor-pointer mb-10 ${isDarkMode ? 'shadow-white hover:shadow-white' : 'hover:shadow-md'}`}>
+      <Link to={`/detailproject/${project.id}`} target="_blank">
+        <div className="relative">
+          <img className="w-full object-cover h-36 md:h-56" src={project.image} alt="Project Image" />
+        </div>
+        <div className="p-4">
+          <ProjectCardHeader title={project.title} />
+          <ProjectCardBody desc={project.desc} />
+        </div>
+      </Link>
+    </div>
   );
 };
 
 const ProjectCardHeader = ({ title }) => {
-  return <h3 className="text-lg font-medium mb-2">{title}</h3>;
+  const { isDarkMode } = useTheme();
+
+  return <h3 className={`text-lg font-medium mb-2 ${isDarkMode ? 'text-slate-50' : 'text-slate-800'}`}>{title}</h3>;
 };
 
 const ProjectCardBody = ({ desc }) => {
-  return <p className="text-gray-600 text-sm mb-4">{desc}</p>;
+  const { isDarkMode } = useTheme();
+
+  return <p className={`text-sm mb-4 ${isDarkMode ? 'text-slate-200' : 'text-slate-600'}`}>{desc}</p>;
 };
 
 export default ProjectCard;

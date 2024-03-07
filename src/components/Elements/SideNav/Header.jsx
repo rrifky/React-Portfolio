@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 const Header = ({ isExpanded, handleExpandToggle, isDarkMode, textVariants }) => {
   return (
     <div className="flex justify-center mt-4 mb-8">
-      <img src="images/rifky.png" alt="Rifky" className={`w-[50px] h-[50px] rounded-full border-2 border-white shadow ${isDarkMode && 'shadow-slate-50 border-sky-950'}`} />
+      <img src="images/rifky.png" alt="Rifky" className={`w-[50px] h-[50px] rounded-full border-2  shadow ${isDarkMode ? 'shadow-slate-50 border-zinc-950' : 'border-white'}`} />
       {isExpanded && (
         <motion.div
-          className={`text-slate-700 flex flex-col my-auto min-w-[130px] ml-2 ${isDarkMode && 'text-slate-50'}`}
+          className={` flex flex-col my-auto min-w-[130px] ml-2 ${isDarkMode ? 'text-slate-50' : 'text-slate-700'}`}
           initial="collapsed"
           animate={isExpanded ? 'expanded' : 'collapsed'}
           variants={textVariants}
@@ -19,7 +19,7 @@ const Header = ({ isExpanded, handleExpandToggle, isDarkMode, textVariants }) =>
       )}
       <span
         onClick={handleExpandToggle}
-        className={` ${isDarkMode ? 'bg-blue-950 shadow-slate-50' : 'bg-slate-50'} absolute h-[20px] w-[20px] top-[32px] left-[60px]  rounded-full shadow flex items-center justify-center transition duration-500 ease-in-out te ${
+        className={` ${isDarkMode ? 'bg-zinc-950 shadow-slate-50' : 'bg-white'} absolute h-[20px] w-[20px] top-[32px] left-[60px]  rounded-full shadow flex items-center justify-center transition duration-500 ease-in-out te ${
           isExpanded && 'translate-x-[130px] rotate-180'
         }`}
       >
