@@ -27,31 +27,16 @@ const ContactForm = () => {
       [name]: value,
     });
   };
+
+  const darkModeClass = isDarkMode ? 'text-white bg-zinc-900' : '';
+
   return (
     <form onSubmit={handleSubmit} className={`mt-8`}>
       <div className="flex flex-col mb-4">
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Name"
-          value={formData.name}
-          onChange={handleInputChange}
-          className={`border rounded-md py-2 px-3 focus:outline-none focus:border-slate-700 ${isDarkMode && 'bg-zinc-900'}`}
-          required
-        />
+        <input type="text" id="name" name="name" placeholder="Name" value={formData.name} onChange={handleInputChange} className={`border rounded-md py-2 px-3 focus:outline-none focus:border-slate-700 ${darkModeClass}`} required />
       </div>
       <div className="flex flex-col mb-4">
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleInputChange}
-          className={`border rounded-md py-2 px-3 focus:outline-none focus:border-slate-700  ${isDarkMode && 'bg-zinc-900'}`}
-          required
-        />
+        <input type="email" id="email" name="email" placeholder="Email" value={formData.email} onChange={handleInputChange} className={`border rounded-md py-2 px-3 focus:outline-none focus:border-slate-700  ${darkModeClass}`} required />
       </div>
       <div className="flex flex-col mb-4">
         <textarea
@@ -61,7 +46,7 @@ const ContactForm = () => {
           value={formData.message}
           onChange={handleInputChange}
           rows="4"
-          className={`border rounded-md py-2 px-3 focus:outline-none focus:border-slate-700 ${isDarkMode && 'bg-zinc-900'} `}
+          className={`border rounded-md py-2 px-3 focus:outline-none focus:border-slate-700 ${darkModeClass} `}
           required
         ></textarea>
       </div>
