@@ -7,10 +7,17 @@ import Sidenav from '../components/Layouts/Sidenav';
 import Mobilenav from '../components/Layouts/Mobilenav';
 import SkillSection from '../components/Fragments/SkillSection';
 import { useTheme } from '../context/ThemeContext';
+import { motion } from 'framer-motion';
 
 const HomePages = () => {
+  const [isSidenavReady, setIsSidenavReady] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const { isDarkMode } = useTheme();
+
+  useEffect(() => {
+    // Set isSidenavReady ke true setelah komponen dimuat
+    setIsSidenavReady(true);
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -23,17 +30,23 @@ const HomePages = () => {
     };
   }, []);
 
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
   return (
     <div className={`flex justify-center ${isDarkMode ? 'bg-zinc-900' : 'bg-white'}`}>
       <div className="mx-auto max-w-[340px] mb-8 md:max-w-[720px] lg:max-w-[920px]">
-        {isMobile ? <Mobilenav /> : <Sidenav />}
-        <div className="xl:ml-8 mt-[80px] xl:mt-0">
+        {isMobile && isSidenavReady && <Mobilenav />}
+        {!isMobile && isSidenavReady && <Sidenav />}
+        <motion.div className="xl:ml-8 mt-[80px] xl:mt-0" variants={sectionVariants} initial="hidden" animate="visible">
           <Profile />
           <ExperienceSection />
           <ProjectSection />
           <SkillSection />
           <ContactSection />
-        </div>
+        </motion.div>
       </div>
     </div>
   );
