@@ -8,26 +8,15 @@ import Mobilenav from '../components/Layouts/Mobilenav';
 import SkillSection from '../components/Fragments/SkillSection';
 import { useTheme } from '../context/ThemeContext';
 import { motion } from 'framer-motion';
+import useResizer from '../hooks/useResizer';
 
 const HomePages = () => {
   const [isSidenavReady, setIsSidenavReady] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const isMobile = useResizer();
   const { isDarkMode } = useTheme();
 
   useEffect(() => {
-    // Set isSidenavReady ke true setelah komponen dimuat
     setIsSidenavReady(true);
-  }, []);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 1080);
-    };
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
   }, []);
 
   const sectionVariants = {
