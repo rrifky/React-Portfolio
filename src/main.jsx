@@ -1,51 +1,101 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React, { useEffect, useState } from 'react';
+import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import HomePages from './Pages/homePages';
 import AboutPages from './Pages/aboutPages';
-import './index.css';
 import ExperiencePages from './Pages/experiencePages';
 import ProjectPages from './Pages/projectPages';
 import ContactPages from './Pages/contactPages';
 import DetailProject from './Pages/detailProject';
 import DetailExperience from './Pages/detailExperience';
 import { ThemeProvider } from './context/ThemeContext';
+import Sidenav from './components/Layouts/Sidenav';
+import useResizer from './hooks/useResizer';
+import Mobilenav from './components/Layouts/Mobilenav';
+import './index.css';
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <HomePages />,
-  },
-  {
-    path: '/about',
-    element: <AboutPages />,
-  },
-  {
-    path: '/experience',
-    element: <ExperiencePages />,
-  },
-  {
-    path: '/detailexperience/:id',
-    element: <DetailExperience />,
-  },
-  {
-    path: '/project',
-    element: <ProjectPages />,
-  },
-  {
-    path: '/detailproject/:id',
-    element: <DetailProject />,
-  },
-  {
-    path: '/contact',
-    element: <ContactPages />,
-  },
-]);
+const App = () => {
+  const [isSidenavReady, setIsSidenavReady] = useState(false);
+  const isMobile = useResizer();
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <ThemeProvider>
-      <RouterProvider router={router} />
-    </ThemeProvider>
-  </React.StrictMode>
-);
+  useEffect(() => {
+    setIsSidenavReady(true);
+  }, []);
+
+  const Layout = ({ children }) => (
+    <div>
+      {isMobile && isSidenavReady && <Mobilenav />}
+      {!isMobile && isSidenavReady && <Sidenav />}
+      <main>{children}</main>
+    </div>
+  );
+
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: (
+        <Layout>
+          <HomePages />
+        </Layout>
+      ),
+    },
+    {
+      path: '/about',
+      element: (
+        <Layout>
+          <AboutPages />
+        </Layout>
+      ),
+    },
+    {
+      path: '/experience',
+      element: (
+        <Layout>
+          <ExperiencePages />
+        </Layout>
+      ),
+    },
+    {
+      path: '/detailexperience/:id',
+      element: (
+        <Layout>
+          <DetailExperience />
+        </Layout>
+      ),
+    },
+    {
+      path: '/project',
+      element: (
+        <Layout>
+          <ProjectPages />
+        </Layout>
+      ),
+    },
+    {
+      path: '/detailproject/:id',
+      element: (
+        <Layout>
+          <DetailProject />
+        </Layout>
+      ),
+    },
+    {
+      path: '/contact',
+      element: (
+        <Layout>
+          <ContactPages />
+        </Layout>
+      ),
+    },
+  ]);
+
+  return (
+    <React.StrictMode>
+      <ThemeProvider>
+        <RouterProvider router={router} />
+      </ThemeProvider>
+    </React.StrictMode>
+  );
+};
+
+createRoot(document.getElementById('root')).render(<App />);
