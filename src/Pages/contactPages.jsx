@@ -3,11 +3,9 @@ import Sosmed from '../components/Elements/Sosmed';
 import { FaLinkedin, FaGithub, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
-import useResizer from '../hooks/useResizer';
 
 const ContactPages = () => {
   const { isDarkMode } = useTheme();
-  const isMobile = useResizer();
 
   return (
     <div className={`${isDarkMode ? 'bg-zinc-900' : 'bg-white'} h-screen`}>
