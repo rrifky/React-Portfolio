@@ -6,11 +6,10 @@ const MobileMenu = ({ isOpen, isDarkMode }) => {
 
   return (
     <div className={`absolute -top-20 left-0 right-0 ${darkModeVariant} shadow h-[450px] -z-50 ${isOpen ? 'block' : 'hidden'}`}>
-      <div className="flex flex-col items-center h-full pt-36">
+      <div className="flex flex-col items-center h-full pt-44">
         {[
           { path: '/', label: 'Home' },
           { path: '/about', label: 'About' },
-          { path: '/experience', label: 'Experience' },
           { path: '/project', label: 'Project' },
           { path: '/contact', label: 'Contact' },
         ].map((item) => (

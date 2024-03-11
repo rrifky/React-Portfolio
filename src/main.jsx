@@ -3,7 +3,6 @@ import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import HomePages from './Pages/homePages';
 import AboutPages from './Pages/aboutPages';
-import ExperiencePages from './Pages/experiencePages';
 import ProjectPages from './Pages/projectPages';
 import ContactPages from './Pages/contactPages';
 import DetailProject from './Pages/detailProject';
@@ -44,14 +43,6 @@ const App = () => {
       element: (
         <Layout>
           <AboutPages />
-        </Layout>
-      ),
-    },
-    {
-      path: '/experience',
-      element: (
-        <Layout>
-          <ExperiencePages />
         </Layout>
       ),
     },

@@ -74,7 +74,7 @@ const ProjectCardHeader = ({ title }) => {
 const ProjectCardBody = ({ desc }) => {
   const { isDarkMode } = useTheme();
 
-  return <p className={`text-sm mb-4 ${isDarkMode ? 'text-slate-200' : 'text-slate-600'}`}>{desc}</p>;
+  return <p className={`text-sm mb-4 ${isDarkMode ? 'text-slate-200' : 'text-slate-600'}`}>{desc.substring(0, 100)}...</p>;
 };
 
 export default ProjectCard;

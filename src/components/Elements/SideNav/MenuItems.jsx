@@ -33,7 +33,6 @@ const MenuItems = ({ isExpanded, textVariants, isDarkMode }) => {
     <div className={`flex flex-col ${isDarkMode ? 'text-slate-50' : ' text-slate-700'} align-items-center`}>
       <MenuItem icon={<RiHome6Line className="text-xl" />} path="/" title="Home" isExpanded={isExpanded} textVariants={textVariants} />
       <MenuItem icon={<FiUser className="text-xl" />} path="/about" title="About" isExpanded={isExpanded} textVariants={textVariants} />
-      <MenuItem icon={<BsSuitcaseLg className="text-xl" />} path="/experience" title="Experience" isExpanded={isExpanded} textVariants={textVariants} />
       <MenuItem icon={<GoProject className="text-xl" />} path="/project" title="Project" isExpanded={isExpanded} textVariants={textVariants} />
       <MenuItem icon={<FaRegAddressCard className="text-xl" />} path="/contact" title="Contact" isExpanded={isExpanded} textVariants={textVariants} />
     </div>

@@ -18,7 +18,7 @@ const ExperienceCard = (props) => {
 const ExperienceHeader = (props) => {
   const { image } = props;
   return (
-    <div className="mr-4 md:mr-6">
+    <div className="mr-4 md:mr-6 pl-4">
       <img src={image} width={80} height={80} alt="quadra" />
     </div>
   );
