@@ -29,9 +29,9 @@ const ExperienceBody = (props) => {
   const { title, subtitle, date } = props;
   return (
     <div className="flex flex-col">
-      <h4 className={`text-lg md:text-xl font-medium mb-2 ${isDarkMode ? 'text-slate-50' : 'text-slate-800'}`}>{title}</h4>
-      <h4 className={`text-base md:text-lg mb-2 ${isDarkMode ? 'text-slate-100' : 'text-slate-700'}`}>{subtitle}</h4>
-      <p className={`text-xs md:text-sm ${isDarkMode ? 'text-slate-200' : 'text-slate-600'}`}>{date}</p>
+      <h4 className={`text-lg font-medium mb-2 max-w-[250px] ${isDarkMode ? 'text-slate-50' : 'text-slate-800'}`}>{title}</h4>
+      <h4 className={`text-base  mb-2 ${isDarkMode ? 'text-slate-100' : 'text-slate-700'}`}>{subtitle}</h4>
+      <p className={`text-xs  ${isDarkMode ? 'text-slate-200' : 'text-slate-600'}`}>{date}</p>
     </div>
   );
 };

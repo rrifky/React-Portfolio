@@ -51,8 +51,8 @@ const ProjectCardItem = ({ project }) => {
   const { isDarkMode } = useTheme();
 
   return (
-    <div className={`max-w-md rounded-md overflow-hidden transform transition shadow duration-500 ease-in-out hover:scale-95  cursor-pointer mb-10 ${isDarkMode ? 'shadow-white hover:shadow-white' : 'hover:shadow-md'}`}>
-      <Link to={`/detailproject/${project.id}`} target="_blank">
+    <div className={`max-w-md rounded-md overflow-hidden transform transition shadow duration-500 ease-in-out hover:scale-95 cursor-pointer mb-10 ${isDarkMode ? 'shadow-white hover:shadow-white hover:shadow-md' : 'hover:shadow-md'}`}>
+      <Link to={`/detailproject/${project.id}`}>
         <div className="relative">
           <img className="w-full object-cover h-36 md:h-56" src={project.image} alt="Project Image" />
         </div>

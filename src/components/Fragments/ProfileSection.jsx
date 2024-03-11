@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useTheme } from '../../context/ThemeContext';
 import DownloadResumeButton from '../Elements/ProfileSection/DownloadResumeButton';
 import Identity from '../Elements/ProfileSection/Identity';
@@ -12,12 +13,12 @@ const Profile = () => {
       <Identity />
       <div className="flex mb-8 mt-5 justify-between">
         <div className={`flex flex-row text-2xl md:text-3xl cursor-pointer transition duration-100 ease-in-out ${isDarkMode ? 'text-slate-50' : 'text-slate-700'}`}>
-          <div className="mr-4">
+          <Link to="https://www.linkedin.com/in/rifky-alfarez-8b53bb2b6/" target="_blank" className="mr-4">
             <FaLinkedin className="hover:text-blue-600" />
-          </div>
-          <div>
+          </Link>
+          <Link to="https://github.com/rrifky" target="_blank">
             <FaGithub className="hover:text-slate-950" />
-          </div>
+          </Link>
         </div>
         <div>
           <DownloadResumeButton />
