@@ -3,13 +3,15 @@ import Sosmed from '../components/Elements/Sosmed';
 import { FaLinkedin, FaGithub, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
+import useResizer from '../hooks/useResizer';
 
 const ContactPages = () => {
   const { isDarkMode } = useTheme();
+  const isMobile = useResizer();
 
   return (
-    <div className={`${isDarkMode ? 'bg-zinc-900' : 'bg-white'}`}>
-      <div className={`mx-auto max-w-[340px] md:max-w-[720px] lg:max-w-[920px] pb-[104px]`}>
+    <div className={`${isDarkMode ? 'bg-zinc-900' : 'bg-white'} h-screen`}>
+      <div className={`mx-auto max-w-[340px] md:max-w-[720px] lg:max-w-[920px] pb-[104px] h-full`}>
         <motion.div className="pt-16 xl:pt-0 xl:ml-8" initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
           <div className={`text-xl md:text-3xl font-medium pt-5 ${isDarkMode ? 'text-slate-50' : 'text-slate-800'}`}>Contact</div>
           <div className={`border-t border-slate-300 pt-5 mt-2 md:text-lg  ${isDarkMode ? 'text-slate-200' : 'text-slate-700'}`}>Let's Connect</div>

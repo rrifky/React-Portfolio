@@ -49,7 +49,7 @@ const ExperienceSection = () => {
         {experiences.length > 0 &&
           experiences.map((experience) => (
             <SwiperSlide key={experience.id}>
-              <Link key={experience.id} to={`/detailexperience/${experience.id}`} target="_blank">
+              <Link key={experience.id} to={`/detailexperience/${experience.id}`}>
                 <ExperienceCard>
                   <ExperienceCard.ExperienceHeader image={experience.image} />
                   <ExperienceCard.ExperienceBody title={experience.title} subtitle={experience.subtitle} date={experience.date} />
