@@ -20,9 +20,9 @@ const Header = ({ isExpanded, handleExpandToggle, isDarkMode, textVariants }) =>
       )}
       <span
         onClick={handleExpandToggle}
-        className={` ${isDarkMode ? 'bg-zinc-950 shadow-slate-50' : 'bg-white'} absolute h-[20px] w-[20px] top-[32px] left-[60px]  rounded-full shadow flex items-center justify-center transition duration-500 ease-in-out te ${
-          isExpanded && 'translate-x-[130px] rotate-180'
-        }`}
+        className={` ${
+          isDarkMode ? 'bg-zinc-950 shadow-slate-50' : 'bg-white'
+        } cursor-pointer hover:scale-105 absolute h-[20px] w-[20px] top-[32px] left-[60px]  rounded-full shadow flex items-center justify-center transition duration-500 ease-in-out te ${isExpanded && 'translate-x-[130px] rotate-180'}`}
       >
         <IoIosArrowForward />
       </span>
