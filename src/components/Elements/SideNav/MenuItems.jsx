@@ -1,7 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { RiHome6Line } from 'react-icons/ri';
 import { FiUser } from 'react-icons/fi';
-import { BsSuitcaseLg } from 'react-icons/bs';
 import { GoProject } from 'react-icons/go';
 import { FaRegAddressCard } from 'react-icons/fa6';
 import { motion } from 'framer-motion';

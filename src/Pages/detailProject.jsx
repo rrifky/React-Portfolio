@@ -28,7 +28,7 @@ const DetailProject = () => {
         </div>
         <div className="flex justify-center h-screen">
           <div className="flex flex-col">
-            <img src={project.image} className="w-full object-cover h-[480px]" />
+            <img src={project.image} className="w-full object-cover h-[240px] md:h-[360px] lg:h-[480px]" />
             <p className={`pt-2 ${isDarkMode ? 'text-slate-50' : 'text-slate-800'}`}>{project.desc}</p>
           </div>
         </div>

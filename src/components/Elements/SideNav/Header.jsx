@@ -1,10 +1,11 @@
 import { IoIosArrowForward } from 'react-icons/io';
 import { motion } from 'framer-motion';
+import pfp from '/images/rifky.png';
 
 const Header = ({ isExpanded, handleExpandToggle, isDarkMode, textVariants }) => {
   return (
     <div className="flex justify-center mt-4 mb-8">
-      <img src="images/rifky.png" alt="Rifky" className={`w-[50px] h-[50px] rounded-full border-2  shadow ${isDarkMode ? 'shadow-slate-50 border-zinc-950' : 'border-white'}`} />
+      <img src={pfp} alt="Rifky" className={`w-[50px] h-[50px] rounded-full border-2  shadow ${isDarkMode ? 'shadow-slate-50 border-zinc-950' : 'border-white'}`} />
       {isExpanded && (
         <motion.div
           className={` flex flex-col my-auto min-w-[130px] ml-2 ${isDarkMode ? 'text-slate-50' : 'text-slate-700'}`}
