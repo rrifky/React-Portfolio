@@ -110,7 +110,7 @@ const ContactForm = () => {
         )}
         {loading && (
           <div className="flex justify-center">
-            <PulseLoader size={15} color="#1e293b" speedMultiplier={0.5} />
+            <PulseLoader size={15} color={`${isDarkMode ? '#fff' : '#1e293b'}`} speedMultiplier={0.5} />
           </div>
         )}
       </form>
